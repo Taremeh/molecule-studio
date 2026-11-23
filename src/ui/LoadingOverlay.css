@@ -1,0 +1,41 @@
+.loading-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: color-mix(in srgb, var(--bg) 35%, transparent);
+  animation: loading-fade 0.2s ease-out 0.12s both;
+}
+
+.loading-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: min(440px, 100%);
+  padding: 14px 18px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.loading-spinner {
+  flex: 0 0 auto;
+  color: var(--accent);
+}
+
+.loading-message {
+  font-size: 13px;
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+
+@keyframes loading-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

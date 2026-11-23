@@ -1,0 +1,242 @@
+.help-modal .modal-body {
+  padding: 4px 20px 16px;
+}
+
+.help-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 8px 28px;
+}
+
+@media (max-width: 760px) {
+  .help-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.help-section {
+  padding-top: 14px;
+}
+
+.help-section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.help-section-title svg {
+  color: var(--accent);
+}
+
+/* navigation */
+.help-nav-row {
+  display: grid;
+  grid-template-columns: 22px 92px 1fr;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.help-nav-row:last-child {
+  border-bottom: 0;
+}
+
+.help-nav-icon {
+  display: inline-flex;
+  color: var(--text-faint);
+}
+
+.help-nav-action {
+  font-weight: 500;
+}
+
+.help-nav-gesture {
+  color: var(--text-muted);
+}
+
+/* tips */
+.help-tips {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.help-tips li {
+  margin-bottom: 5px;
+}
+
+.help-tips b {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* shortcuts */
+.help-shortcut-group + .help-shortcut-group {
+  margin-top: 12px;
+}
+
+.help-group-title {
+  font-size: 11px;
+  color: var(--text-faint);
+  margin-bottom: 4px;
+}
+
+.help-shortcut-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.help-shortcut-row:last-child {
+  border-bottom: 0;
+}
+
+.help-shortcut-desc {
+  color: var(--text);
+  min-width: 0;
+}
+
+.help-keys {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 4px;
+  flex: 0 0 auto;
+}
+
+.help-keys-alt {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.help-keys-or {
+  color: var(--text-faint);
+  font-size: 11px;
+  margin: 0 3px 0 1px;
+}
+
+/* selection language */
+.help-sel-intro {
+  margin: 0 0 10px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.help code {
+  font-family: var(--mono);
+  font-size: 12px;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: var(--bg-elev-2);
+  color: var(--text);
+}
+
+.help-sel-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  max-width: 320px;
+}
+
+.help-sel-search svg {
+  position: absolute;
+  left: 10px;
+  color: var(--text-faint);
+  pointer-events: none;
+}
+
+.help-sel-search .input {
+  width: 100%;
+  padding-left: 30px;
+}
+
+.help-sel-table {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.help-sel-row {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.8fr) minmax(0, 1.6fr) minmax(0, 1.2fr);
+  gap: 12px;
+  align-items: center;
+  padding: 7px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.help-sel-row:nth-child(even) {
+  background: color-mix(in srgb, var(--bg-elev-2) 50%, transparent);
+}
+
+.help-sel-row:last-child {
+  border-bottom: 0;
+}
+
+.help-sel .help-sel-keyword {
+  background: transparent;
+  padding: 0;
+  color: var(--accent);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.help-sel-desc {
+  color: var(--text-muted);
+}
+
+.help-sel-example {
+  min-width: 0;
+}
+
+.help-sel-try {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  max-width: 100%;
+}
+
+.help-sel-try code {
+  display: inline-block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  border: 1px solid var(--border);
+  transition: border-color 0.12s, background 0.12s;
+}
+
+.help-sel-try:hover code,
+.help-sel-try:focus-visible code {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.help-sel-try:focus-visible {
+  outline: none;
+}
+
+.help-footer {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  color: var(--text-faint);
+  font-size: 12px;
+  text-align: center;
+}

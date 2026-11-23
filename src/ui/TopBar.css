@@ -1,0 +1,239 @@
+.topbar {
+  position: relative;
+  z-index: 30;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  height: var(--topbar-h);
+  padding: 0 10px 0 14px;
+  background: var(--bg-elev);
+  border-bottom: 1px solid var(--border);
+}
+
+.topbar-left,
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  min-width: 0;
+}
+
+.topbar-left {
+  gap: 10px;
+}
+
+.topbar-right {
+  justify-content: flex-end;
+}
+
+.topbar-center {
+  display: flex;
+  justify-content: center;
+}
+
+.topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+  user-select: none;
+}
+
+.topbar-brand-name {
+  font-weight: 650;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.topbar-sep {
+  width: 1px;
+  height: 20px;
+  background: var(--border-strong);
+  flex: 0 0 auto;
+}
+
+.topbar-divider {
+  width: 1px;
+  height: 18px;
+  background: var(--border);
+  margin: 0 6px;
+  flex: 0 0 auto;
+}
+
+.topbar-wrap {
+  display: inline-flex;
+}
+
+/* ---------- molecule name ---------- */
+.topbar-name-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.topbar-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  max-width: 320px;
+  height: 28px;
+  padding: 0 8px;
+  margin-left: -8px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  cursor: text;
+  font-weight: 500;
+}
+
+.topbar-name:hover {
+  background: var(--bg-hover);
+}
+
+.topbar-name:focus-visible {
+  outline: 2px solid var(--accent);
+}
+
+.topbar-name-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.topbar-name-pencil {
+  flex: 0 0 auto;
+  color: var(--text-faint);
+  opacity: 0;
+  transition: opacity 0.12s;
+}
+
+.topbar-name:hover .topbar-name-pencil,
+.topbar-name:focus-visible .topbar-name-pencil {
+  opacity: 1;
+}
+
+.topbar-name-input {
+  height: 28px;
+  width: 240px;
+  max-width: 32vw;
+  margin-left: -8px;
+  padding: 0 8px;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  outline: none;
+  box-shadow: 0 0 0 3px var(--accent-soft);
+  font-weight: 500;
+}
+
+.topbar-name-meta {
+  flex: 0 0 auto;
+  color: var(--text-faint);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.topbar-open {
+  flex: 0 0 auto;
+}
+
+/* ---------- menus ---------- */
+.icon-btn.topbar-menu-btn {
+  width: auto;
+  padding: 0 4px 0 7px;
+  gap: 1px;
+}
+
+.icon-btn .topbar-caret {
+  width: 12px;
+  height: 12px;
+  color: var(--text-faint);
+}
+
+.topbar-menu {
+  min-width: 250px;
+}
+
+.topbar-menu-label {
+  padding: 6px 10px 4px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.topbar-menu-icon {
+  flex: 0 0 auto;
+  color: var(--text-muted);
+}
+
+.topbar-menu-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.topbar-menu-desc {
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+.topbar-menu-tag {
+  margin-left: 6px;
+  padding: 1px 6px;
+  border-radius: 8px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 600;
+  vertical-align: 1px;
+}
+
+.topbar-menu-toggle {
+  padding: 2px 10px 4px;
+}
+
+.topbar-axes {
+  display: flex;
+  gap: 6px;
+  padding: 2px 10px 6px;
+}
+
+.topbar-axis {
+  flex: 1 1 0;
+  font-family: var(--mono);
+  font-weight: 600;
+}
+
+.topbar-axis-x {
+  color: #ef4444;
+}
+
+.topbar-axis-y {
+  color: #22c55e;
+}
+
+.topbar-axis-z {
+  color: #3b82f6;
+}
+
+@media (max-width: 1180px) {
+  .topbar-brand-name,
+  .topbar-name-meta {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .topbar-open span {
+    display: none;
+  }
+  .topbar-name {
+    max-width: 160px;
+  }
+}

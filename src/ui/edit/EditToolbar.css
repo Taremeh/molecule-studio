@@ -1,0 +1,185 @@
+/* Floating vertical editing toolbar (EditToolbar.tsx). OWNER: edit-ui. */
+
+.etb {
+  --etb-btn: 32px;
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 5px;
+  user-select: none;
+}
+
+.etb-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.etb .icon-btn {
+  width: var(--etb-btn);
+  height: var(--etb-btn);
+}
+
+.etb .icon-btn.is-active {
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+  color: #fff;
+}
+
+.etb-sep {
+  width: 22px;
+  height: 1px;
+  margin: 3px 0;
+  background: var(--border-strong);
+}
+
+/* Current element: CPK tile. */
+.etb-element {
+  width: calc(var(--etb-btn) + 4px);
+  height: calc(var(--etb-btn) + 4px);
+  border-radius: 9px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.08s, box-shadow 0.12s;
+}
+
+.etb-element:hover {
+  transform: scale(1.05);
+}
+
+.etb-element.is-open {
+  box-shadow: 0 0 0 2px var(--bg-elev), 0 0 0 4px var(--accent);
+}
+
+.etb-element-sym {
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+}
+
+/* Bond order segmented control (vertical). */
+.etb-bond {
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  transition: opacity 0.15s;
+}
+
+.etb-bond.is-idle {
+  opacity: 0.6;
+}
+
+.etb-bond.is-idle:hover {
+  opacity: 1;
+}
+
+.etb-bond-btn {
+  width: var(--etb-btn);
+  height: calc(var(--etb-btn) * 0.68);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0;
+}
+
+.etb-bond-btn + .etb-bond-btn {
+  border-top: 1px solid var(--border);
+}
+
+.etb-bond-btn:hover {
+  background: var(--bg-hover);
+  color: var(--text);
+}
+
+.etb-bond-btn.is-active {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* Current fragment. */
+.etb-fragment {
+  width: var(--etb-btn);
+  height: var(--etb-btn);
+  border-radius: var(--radius-sm);
+  border: 1px dashed var(--border-strong);
+  background: transparent;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+.etb-fragment:hover,
+.etb-fragment.is-open {
+  border-style: solid;
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.etb-fragment.is-active {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.etb-fragment-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  max-width: calc(var(--etb-btn) - 4px);
+  overflow: hidden;
+  text-overflow: clip;
+  white-space: nowrap;
+}
+
+/* Popovers open to the right of the toolbar. */
+.etb-popover.popover-right {
+  left: calc(100% + 14px);
+  max-width: none;
+}
+
+/* Shorter stages: compact buttons. */
+@media (max-height: 820px) {
+  .etb {
+    --etb-btn: 28px;
+    gap: 3px;
+  }
+  .etb .icon-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-height: 700px) {
+  .etb {
+    --etb-btn: 25px;
+    padding: 4px;
+  }
+  .etb-sep {
+    margin: 1px 0;
+  }
+}
+
+@media (max-height: 600px) {
+  .etb-tools {
+    display: grid;
+    grid-template-columns: repeat(2, var(--etb-btn));
+  }
+}

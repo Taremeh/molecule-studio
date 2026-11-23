@@ -1,0 +1,127 @@
+/* Geometry inspector (GeometryInspector.tsx). OWNER: edit-ui. */
+
+.geo-body {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.geo-kind {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.geo-bond-tag {
+  margin-left: auto;
+  font-weight: 500;
+  font-size: 11px;
+  color: var(--text-faint);
+  text-transform: capitalize;
+}
+
+.geo-atoms {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 2px;
+}
+
+.geo-atom {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.geo-atom .chip {
+  cursor: default;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--text);
+}
+
+.geo-dash {
+  color: var(--text-faint);
+  padding: 0 1px;
+}
+
+.geo-role {
+  font-family: var(--font);
+  font-size: 9.5px;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.geo-value-row {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+}
+
+.geo-value {
+  font-family: var(--mono);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.geo-dev {
+  font-family: var(--mono);
+  font-size: 11.5px;
+}
+
+.geo-dev.is-ok {
+  color: var(--success);
+}
+
+.geo-dev.is-warn {
+  color: var(--warning);
+}
+
+.geo-dev.is-error {
+  color: var(--danger);
+}
+
+.geo-edit {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.geo-slider {
+  flex: 1;
+  min-width: 0;
+}
+
+.geo-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.geo-note,
+.geo-reason {
+  font-size: 11.5px;
+  line-height: 1.35;
+}
+
+.geo-note {
+  color: var(--text-faint);
+}
+
+.geo-reason {
+  color: var(--warning);
+}
+
+.geo-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}

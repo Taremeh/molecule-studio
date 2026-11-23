@@ -1,0 +1,196 @@
+/* Measurements panel (MeasurementsPanel.tsx). OWNER: edit-ui. */
+
+.meas-kinds {
+  display: flex;
+  padding: 2px;
+  gap: 2px;
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  border: 1px solid var(--border);
+}
+
+.meas-kind {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  height: 26px;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+}
+
+.meas-kind:hover {
+  color: var(--text);
+  background: var(--bg-hover);
+}
+
+.meas-kind.is-active {
+  background: var(--accent-soft);
+  color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+.meas-pending {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 6px 8px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-soft);
+  font-size: 12px;
+  color: var(--text);
+}
+
+.meas-dots {
+  display: inline-flex;
+  gap: 3px;
+}
+
+.meas-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: 1px solid var(--accent);
+}
+
+.meas-dot.is-done {
+  background: var(--accent);
+}
+
+.meas-dot.is-next {
+  animation: meas-blink 1.2s ease-in-out infinite;
+}
+
+@keyframes meas-blink {
+  50% {
+    background: var(--accent-soft);
+  }
+}
+
+.meas-pending-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.meas-link {
+  border: 0;
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0;
+}
+
+.meas-list {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.meas-row {
+  display: flex;
+  align-items: center;
+  border-radius: var(--radius-sm);
+  transition: background 0.1s;
+}
+
+.meas-row.is-hovered {
+  background: var(--bg-hover);
+}
+
+.meas-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 4px 6px 6px;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+}
+
+.meas-icon {
+  display: inline-flex;
+  color: var(--text-muted);
+  flex: 0 0 auto;
+}
+
+.meas-icon.kind-distance {
+  color: #22d3ee;
+}
+
+.meas-icon.kind-angle {
+  color: #a78bfa;
+}
+
+.meas-icon.kind-dihedral {
+  color: #f59e0b;
+}
+
+.meas-atoms {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.meas-value {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.meas-delete {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin-right: 2px;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--text-faint);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.1s;
+}
+
+.meas-row:hover .meas-delete,
+.meas-delete:focus-visible {
+  opacity: 1;
+}
+
+.meas-delete:hover {
+  color: var(--danger);
+  background: var(--bg-active);
+}
+
+@media (hover: none) {
+  .meas-delete {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .meas-dot.is-next {
+    animation: none;
+  }
+}
