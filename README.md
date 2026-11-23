@@ -5,6 +5,23 @@ alternative to tools like VMD: you load a structure, rotate and inspect it, and 
 panels instead of command menus. An edit mode lets you build and modify molecules by direct manipulation, with
 immediate chemical feedback.
 
+## Demo (1 minute)
+
+[![Watch the demo video](docs/media/demo-poster.jpg)](demo/molecule-studio-demo.mp4)
+
+[▶ Watch the demo video](demo/molecule-studio-demo.mp4) (54 s, with narration)
+
+## Screenshots
+
+| | |
+| --- | --- |
+| ![A molecule opened by typing its name](docs/media/open-by-name.jpg) | ![Clicking an atom shows what it is](docs/media/inspect-atom.jpg) |
+| **Open a molecule by name.** Type “caffeine” and the 3D structure comes from PubChem; PDB ids, UniProt ids (AlphaFold), SMILES and files work too. | **Inspect.** Drag to turn, scroll to zoom, click any atom for its element, residue, coordinates and valence. |
+| ![A green preview for a valid new bond](docs/media/edit-valid-bond.jpg) | ![A red preview for a bond to a full atom](docs/media/edit-invalid-bond.jpg) |
+| **Build with live feedback.** Drag out a bond: a green preview means the bond is chemically allowed… | **…and red means it is not**, with the reason in the status bar (“N is saturated — can't add another bond”). |
+| ![A protein drawn as a cartoon with its bound drug](docs/media/protein-cartoon.jpg) | ![A see-through surface coloured by hydrophobicity](docs/media/protein-surface.jpg) |
+| **Big molecules too.** HIV-1 protease (PDB 1HSG) as a cartoon, coloured by chain, with its drug as ball and stick. | **Layers.** The same protein as a molecular surface coloured by hydrophobicity and made see-through to reveal the drug. |
+
 ## Running it
 
 Requires Node 20 or newer.
@@ -77,6 +94,9 @@ src/
   ui/        React components (shell, panels, dialogs, edit toolbar)
   state/     zustand store (document, undo history, layers, selection, view settings)
   app/       high-level actions (load, export, common commands)
+demo/        the demo video and the scripts that make it (narration, scripted screen recording,
+             music and mix: sh demo/build.sh <build-dir>)
+docs/media/  screenshots used in this README
 ```
 
 [ARCHITECTURE.md](ARCHITECTURE.md) describes the module contracts, data flow and conventions in detail.

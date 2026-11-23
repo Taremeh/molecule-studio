@@ -1,0 +1,66 @@
+{
+  "voice": "af_heart",
+  "speed": 0.92,
+  "gap": 0.55,
+  "say": {},
+  "shots": [
+    {
+      "id": "intro",
+      "pre": 1.4,
+      "post": 0.9,
+      "lines": [
+        "This is Molecule Studio: a place to explore and build molecules, right in your browser."
+      ]
+    },
+    {
+      "id": "look",
+      "pre": 0.3,
+      "post": 0.6,
+      "gaps": [
+        0.9,
+        0.7
+      ],
+      "lines": [
+        "Type the name of a molecule, like caffeine, and it appears in 3D.",
+        "Drag to turn it, and scroll to zoom.",
+        "Click any atom to see what it is."
+      ]
+    },
+    {
+      "id": "build",
+      "pre": 0.3,
+      "post": 0.6,
+      "gaps": [
+        0.8,
+        1.0,
+        0.9
+      ],
+      "lines": [
+        "In edit mode, you can change it.",
+        "Click to add a carbon, and its hydrogens appear on their own.",
+        "Drag out a bond: green means it's allowed, red means that atom is already full.",
+        "Let go, and one click tidies up the shape."
+      ]
+    },
+    {
+      "id": "protein",
+      "pre": 1.7,
+      "post": 0.8,
+      "gaps": [
+        1.2
+      ],
+      "lines": [
+        "It works for big molecules too, like this protein with a drug bound inside.",
+        "Show its surface, color it by how water-loving each part is, and look right through it."
+      ]
+    },
+    {
+      "id": "outro",
+      "pre": 0.5,
+      "post": 2.6,
+      "lines": [
+        "Molecule Studio. Explore, inspect and build."
+      ]
+    }
+  ]
+}
